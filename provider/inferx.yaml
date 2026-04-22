@@ -1,0 +1,42 @@
+provider: inferx
+label:
+  en_US: InferX
+description:
+  en_US: InferX fast inference — LLM reasoning, text embedding, and reranking via a single base URL
+background: '#0F172A'
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: base_url
+      label:
+        en_US: Base URL
+      type: text-input
+      required: true
+      placeholder:
+        en_US: "e.g. https://model.inferx.net/funccall/tn-xxx/default/ModelName/v1"
+icon_small:
+  en_US: icon.svg
+icon_large:
+  en_US: icon.svg
+supported_model_types:
+  - llm
+  - text-embedding
+  - rerank
+models:
+  llm:
+    predefined:
+      - models/llm/*.yaml
+  text_embedding:
+    predefined:
+      - models/text_embedding/*.yaml
+  rerank:
+    predefined:
+      - models/rerank/*.yaml
+extra:
+  python:
+    provider_source: provider/inferx.py
+    model_sources:
+      - models/llm/llm.py
+      - models/text_embedding/text_embedding.py
+      - models/rerank/rerank.py

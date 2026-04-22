@@ -1,0 +1,7 @@
+.git
+*.difypkg
+*.signed.difypkg
+__pycache__
+*.pyc
+*.pyo
+.env

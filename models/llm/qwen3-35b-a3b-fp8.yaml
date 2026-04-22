@@ -1,0 +1,31 @@
+model: Qwen/Qwen3.6-35B-A3B-FP8
+label:
+  en_US: Qwen3.6 35B-A3B-FP8 (Reasoning)
+model_type: llm
+features:
+  - agent-thought
+  - tool-call
+  - stream-tool-call
+model_properties:
+  mode: chat
+  context_size: 32768
+parameter_rules:
+  - name: temperature
+    use_template: temperature
+  - name: top_p
+    use_template: top_p
+  - name: max_tokens
+    use_template: max_tokens
+    default: 4096
+    max: 32768
+  - name: stream
+    label:
+      en_US: Stream
+    type: boolean
+    default: true
+    required: false
+pricing:
+  input: '0'
+  output: '0'
+  unit: '0.000001'
+  currency: USD
